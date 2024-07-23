@@ -11,6 +11,7 @@ type ShopInformationComponentProps = ComponentProps<{
 export function ShopInformationComponent({ context, component, slots }: ShopInformationComponentProps) {
   const [debugMode, setDebugMode] = useState(false);
   const parameters = component.parameters as any;
+  
   return (
     <>
       <hr/>
