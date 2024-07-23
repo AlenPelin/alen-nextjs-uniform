@@ -9,7 +9,8 @@ type ShopInformationComponentProps = ComponentProps<{
 }>;
 
 export function ShopInformationComponent({ context, component, slots }: ShopInformationComponentProps) {
-const [debugMode, setDebugMode] = useState(false);
+  const [debugMode, setDebugMode] = useState(false);
+  const parameters = component.parameters as any;
   return (
     <>
       <hr/>
@@ -19,10 +20,10 @@ const [debugMode, setDebugMode] = useState(false);
         {!debugMode ? '' : JSON.stringify(component,null,2)}
       </pre>
         <p>
-            Category Name (via reference field): {component.parameters?.category?.value?.entry?.fields?.name?.value}
+            Category Name (via reference field): {parameters?.category?.value?.entry?.fields?.name?.value}
         </p>
         <p>
-            Category Name (via pattern): {component.parameters?.categoryName?.value}
+            Category Name (via pattern): {parameters?.categoryName?.value}
         </p>
     </>
   );
