@@ -1,4 +1,4 @@
-import { ComponentProps, UniformSlot, UniformText } from "@uniformdev/canvas-next-rsc/component";
+import { ComponentProps, UniformRichText, UniformSlot, UniformText } from "@uniformdev/canvas-next-rsc/component";
 
 type ShopPageProps = ComponentProps<{
   name: string;
@@ -21,6 +21,8 @@ export function ShopPage({ context, component, slots }: ShopPageProps) {
         parameterId="description"
         as="p"
       />
+      
+      <UniformRichText parameterId="rte" component={component} />
 
       <UniformSlot context={context} data={component} slot={slots.content} key="content" />
     </>
